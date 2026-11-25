@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.14.3 on win32)" generated="2026-11-24T23:06:46.188748" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\LENOVO\Documents\practicas-automatizacion\robot_project\tests">
+<suite id="s1-s1" name="Ej02 Login Incorrecto" source="C:\Users\LENOVO\Documents\practicas-automatizacion\robot_project\tests\ej02_login_incorrecto.robot">
+<test id="s1-s1-t1" name="Login Con Credenciales Invalidas Muestra Mensaje De Error" line="12">
+<kw name="Abrir Navegador En El Sitio" owner="comunes" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:46.822089" level="INFO">Opening browser 'edge' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${OPCIONES_NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:06:46.821529" elapsed="4.305848"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>${ANCHO_VENTANA}</arg>
+<arg>${ALTO_VENTANA}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.127895" elapsed="0.380780"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.509017" elapsed="0.001279"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.510467" elapsed="0.000304"/>
+</kw>
+<doc>Abre el navegador configurado, define tiempos de espera y carpeta de capturas.</doc>
+<status status="PASS" start="2026-11-24T23:06:46.820488" elapsed="4.690403"/>
+</kw>
+<kw name="Abrir Pagina De Login" owner="login_keywords">
+<kw name="Ir A La Pagina" owner="comunes">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Cargar Pagina" owner="comunes">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:51.513527" level="INFO">Opening url 'https://automationexercise.com/login'</msg>
+<arg>${URL}${ruta}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.513375" elapsed="0.539414"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${elemento_esperado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.053271" elapsed="0.025707"/>
+</kw>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<status status="PASS" start="2026-11-24T23:06:51.513031" elapsed="0.566230"/>
+</kw>
+<arg>3x</arg>
+<arg>5s</arg>
+<arg>Cargar Pagina</arg>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.512299" elapsed="0.567150"/>
+</kw>
+<arg>/login</arg>
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Navega a una ruta del sitio y espera un elemento. Reintenta si el sitio está saturado.</doc>
+<status status="PASS" start="2026-11-24T23:06:51.511837" elapsed="0.567738"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:06:51.511388" elapsed="0.568270"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:52.086832" level="INFO">Page title is 'Automation Exercise - Signup / Login'.</msg>
+<arg>${TITULO_LOGIN}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.080080" elapsed="0.006874"/>
+</kw>
+<kw name="Iniciar Sesion Con" owner="login_keywords">
+<kw name="Escribir En Campo" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.088566" elapsed="0.014419"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:52.103971" level="INFO">Typing text 'usuario.falso@test.com' into text field 'xpath://form[@action='/login']//input[@name='email']'.</msg>
+<arg>${localizador}</arg>
+<arg>${texto}</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.103387" elapsed="0.095796"/>
+</kw>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Espera a que el campo sea visible, lo limpia y escribe el texto.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.088100" elapsed="0.111283"/>
+</kw>
+<kw name="Escribir En Campo" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.200291" elapsed="0.014463"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:52.215379" level="INFO">Typing text 'ClaveIncorrecta123' into text field 'name:password'.</msg>
+<arg>${localizador}</arg>
+<arg>${texto}</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.214992" elapsed="0.087215"/>
+</kw>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Espera a que el campo sea visible, lo limpia y escribe el texto.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.199713" elapsed="0.102695"/>
+</kw>
+<kw name="Hacer Clic" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.303129" elapsed="0.014571"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.317931" elapsed="0.278678"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.596865" elapsed="0.016842"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:52.614224" level="INFO">Clicking element 'css:button[data-qa='login-button']'.</msg>
+<arg>${localizador}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.613935" elapsed="0.637915"/>
+</kw>
+<arg>${LOGIN_BOTON}</arg>
+<doc>Desplaza el elemento a la vista, espera que esté habilitado y hace clic.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.302709" elapsed="0.949532"/>
+</kw>
+<arg>${EMAIL_INVALIDO}</arg>
+<arg>${PASSWORD_INVALIDO}</arg>
+<doc>Llena el formulario de login con el correo y contraseña indicados y presiona Login.</doc>
+<status status="PASS" start="2026-11-24T23:06:52.087503" elapsed="1.164949"/>
+</kw>
+<kw name="Validar Mensaje De Error De Login" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_MENSAJE_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.253397" elapsed="0.018878"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.284743" level="INFO">Element 'xpath://form[@action='/login']//p' is displayed.</msg>
+<arg>${LOGIN_MENSAJE_ERROR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.272563" elapsed="0.012290"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.285402" level="INFO">Verifying element 'xpath://form[@action='/login']//p' contains exact text 'Your email or password is incorrect!'.</msg>
+<arg>${LOGIN_MENSAJE_ERROR}</arg>
+<arg>${mensaje_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.285058" elapsed="0.017046"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.314066" level="INFO">Current page contains text 'Your email or password is incorrect!'.</msg>
+<arg>${mensaje_esperado}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.302398" elapsed="0.011778"/>
+</kw>
+<arg>${MSG_LOGIN_INCORRECTO}</arg>
+<doc>Valida que el mensaje de error sea visible y tenga el texto esperado.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.252954" elapsed="0.061335"/>
+</kw>
+<kw name="Validar Que El Usuario No Inicio Sesion" owner="login_keywords">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.324582" level="INFO">Current page does not contain element 'xpath://a[contains(., 'Logged in as')]'.</msg>
+<arg>${ENLACE_USUARIO_LOGUEADO}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.315635" elapsed="0.009064"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.329455" level="INFO">Current location contains '/login'.</msg>
+<arg>/login</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.324907" elapsed="0.004624"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:06:53.314872" elapsed="0.014754"/>
+</kw>
+<kw name="Tomar Captura De Evidencia" owner="comunes">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:53.502534" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej02_login_incorrecto.png"&gt;&lt;img src="../screenshots/ej02_login_incorrecto.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.330688" elapsed="0.172116"/>
+</kw>
+<arg>ej02_login_incorrecto</arg>
+<doc>Guarda una captura de pantalla en la carpeta screenshots/.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.330047" elapsed="0.172980"/>
+</kw>
+<kw name="Cerrar Navegador" owner="comunes" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>FALLO_{index}.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.504286" elapsed="0.000609"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.505137" elapsed="2.279903"/>
+</kw>
+<doc>Si la prueba falló guarda una captura del error y luego cierra el navegador.</doc>
+<status status="PASS" start="2026-11-24T23:06:53.503794" elapsed="2.281520"/>
+</kw>
+<tag>autenticacion</tag>
+<tag>ejercicio2</tag>
+<tag>funcional</tag>
+<status status="PASS" start="2026-11-24T23:06:46.818939" elapsed="8.966737"/>
+</test>
+<doc>Ejercicio 2 - Login Incorrecto
+Tipo de prueba: funcional - autenticación y manejo de errores.
+Se intenta iniciar sesión con credenciales no registradas y se valida
+el mensaje de error mostrado por la aplicación.</doc>
+<status status="PASS" start="2026-11-24T23:06:46.253941" elapsed="9.533061"/>
+</suite>
+<suite id="s1-s2" name="Ej03 Busqueda Productos" source="C:\Users\LENOVO\Documents\practicas-automatizacion\robot_project\tests\ej03_busqueda_productos.robot">
+<test id="s1-s2-t1" name="Buscar Producto Muestra Resultados Relacionados" line="12">
+<kw name="Abrir Navegador En El Sitio" owner="comunes" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:06:55.810580" level="INFO">Opening browser 'edge' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${OPCIONES_NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:06:55.810248" elapsed="4.198277"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>${ANCHO_VENTANA}</arg>
+<arg>${ALTO_VENTANA}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.008978" elapsed="0.379934"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.389303" elapsed="0.001625"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.391514" elapsed="0.000527"/>
+</kw>
+<doc>Abre el navegador configurado, define tiempos de espera y carpeta de capturas.</doc>
+<status status="PASS" start="2026-11-24T23:06:55.809613" elapsed="4.582567"/>
+</kw>
+<kw name="Abrir Pagina De Productos" owner="productos_keywords">
+<kw name="Ir A La Pagina" owner="comunes">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Cargar Pagina" owner="comunes">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:00.394571" level="INFO">Opening url 'https://automationexercise.com/products'</msg>
+<arg>${URL}${ruta}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.394421" elapsed="1.488693"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${elemento_esperado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.883428" elapsed="0.027336"/>
+</kw>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<status status="PASS" start="2026-11-24T23:07:00.394072" elapsed="1.516947"/>
+</kw>
+<arg>3x</arg>
+<arg>5s</arg>
+<arg>Cargar Pagina</arg>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.393489" elapsed="1.517631"/>
+</kw>
+<arg>/products</arg>
+<arg>${BUSCADOR_PRODUCTOS}</arg>
+<doc>Navega a una ruta del sitio y espera un elemento. Reintenta si el sitio está saturado.</doc>
+<status status="PASS" start="2026-11-24T23:07:00.393028" elapsed="1.518184"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:07:00.392648" elapsed="1.518637"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:01.918017" level="INFO">Page title is 'Automation Exercise - All Products'.</msg>
+<arg>${TITULO_PRODUCTOS}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.911776" elapsed="0.006370"/>
+</kw>
+<kw name="Buscar Producto" owner="productos_keywords">
+<kw name="Escribir En Campo" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.919402" elapsed="0.013131"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:01.933280" level="INFO">Typing text 'jeans' into text field 'id:search_product'.</msg>
+<arg>${localizador}</arg>
+<arg>${texto}</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.932831" elapsed="0.087952"/>
+</kw>
+<arg>${BUSCADOR_PRODUCTOS}</arg>
+<arg>${termino}</arg>
+<doc>Espera a que el campo sea visible, lo limpia y escribe el texto.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.919067" elapsed="0.102013"/>
+</kw>
+<kw name="Hacer Clic" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:02.022114" elapsed="0.019340"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-11-24T23:07:02.041751" elapsed="0.296293"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-11-24T23:07:02.338340" elapsed="0.018698"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:02.357804" level="INFO">Clicking element 'id:submit_search'.</msg>
+<arg>${localizador}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:02.357462" elapsed="0.970741"/>
+</kw>
+<arg>${BOTON_BUSCAR}</arg>
+<doc>Desplaza el elemento a la vista, espera que esté habilitado y hace clic.</doc>
+<status status="PASS" start="2026-11-24T23:07:02.021543" elapsed="1.306842"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>search=${termino}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.328633" elapsed="0.005995"/>
+</kw>
+<arg>${TERMINO_BUSQUEDA}</arg>
+<doc>Escribe el término en el buscador y presiona el botón buscar.</doc>
+<status status="PASS" start="2026-11-24T23:07:01.918633" elapsed="1.416188"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.345113" level="INFO">Current location contains 'search=jeans'.</msg>
+<arg>search=${TERMINO_BUSQUEDA}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.335267" elapsed="0.010006"/>
+</kw>
+<kw name="Validar Seccion De Resultados" owner="productos_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_RESULTADOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.346222" elapsed="0.018322"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.377044" level="INFO">Element 'css:.features_items h2.title' is displayed.</msg>
+<arg>${TITULO_RESULTADOS}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.364845" elapsed="0.012316"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.389256" level="INFO">Current page contains text 'Searched Products'.</msg>
+<arg>${TEXTO_RESULTADOS}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.377399" elapsed="0.011978"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:07:03.345811" elapsed="0.043691"/>
+</kw>
+<kw name="Validar Que Los Resultados Contienen" owner="productos_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.399117" level="INFO">Current page contains element 'css:.features_items .productinfo p'.</msg>
+<arg>${NOMBRES_PRODUCTOS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.390552" elapsed="0.008682"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.405678" level="INFO">${productos} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="bf8b8aa436073d920a353c906d73b437", element="f.770EE3E6A449D5EA319B204FE57C23A1.d.5481EB577B1A62ECBD0AC8D2CE340AAD.e.111")&gt;, &lt;selenium.webdri...</msg>
+<var>${productos}</var>
+<arg>${NOMBRES_PRODUCTOS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.399446" elapsed="0.006288"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-11-24T23:07:03.406603" level="INFO">Length is 3.</msg>
+<msg time="2026-11-24T23:07:03.406705" level="INFO">${cantidad} = 3</msg>
+<var>${cantidad}</var>
+<arg>${productos}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.405938" elapsed="0.000800"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${cantidad} &gt; 0</arg>
+<arg>La búsqueda no devolvió productos</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.406901" elapsed="0.000492"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.419124" level="INFO">${nombre} = Soft Stretch Jeans</msg>
+<var>${nombre}</var>
+<arg>${producto}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.407903" elapsed="0.011277"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nombre.lower()}</arg>
+<arg>${termino.lower()}</arg>
+<arg>El producto "${nombre}" no corresponde a la búsqueda</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.419390" elapsed="0.001044"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-24T23:07:03.420951" level="INFO">Producto encontrado: Soft Stretch Jeans</msg>
+<arg>Producto encontrado: ${nombre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.420656" elapsed="0.000353"/>
+</kw>
+<var name="${producto}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bf8b8aa436073d920a353c906d73b437", element="f.770EE3E6A449D5EA319B204FE57C23A1.d.5481EB577B1A62ECBD0AC8D2CE340AAD.e.111")&gt;</var>
+<status status="PASS" start="2026-11-24T23:07:03.407754" elapsed="0.013309"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.429079" level="INFO">${nombre} = Regular Fit Straight Jeans</msg>
+<var>${nombre}</var>
+<arg>${producto}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.421372" elapsed="0.007756"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nombre.lower()}</arg>
+<arg>${termino.lower()}</arg>
+<arg>El producto "${nombre}" no corresponde a la búsqueda</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.429316" elapsed="0.000664"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-24T23:07:03.430508" level="INFO">Producto encontrado: Regular Fit Straight Jeans</msg>
+<arg>Producto encontrado: ${nombre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.430212" elapsed="0.000353"/>
+</kw>
+<var name="${producto}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bf8b8aa436073d920a353c906d73b437", element="f.770EE3E6A449D5EA319B204FE57C23A1.d.5481EB577B1A62ECBD0AC8D2CE340AAD.e.118")&gt;</var>
+<status status="PASS" start="2026-11-24T23:07:03.421251" elapsed="0.009370"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:03.438357" level="INFO">${nombre} = Grunt Blue Slim Fit Jeans</msg>
+<var>${nombre}</var>
+<arg>${producto}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.430896" elapsed="0.007506"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nombre.lower()}</arg>
+<arg>${termino.lower()}</arg>
+<arg>El producto "${nombre}" no corresponde a la búsqueda</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.438581" elapsed="0.000583"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-24T23:07:03.439662" level="INFO">Producto encontrado: Grunt Blue Slim Fit Jeans</msg>
+<arg>Producto encontrado: ${nombre}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.439385" elapsed="0.000376"/>
+</kw>
+<var name="${producto}">&lt;selenium.webdriver.remote.webelement.WebElement (session="bf8b8aa436073d920a353c906d73b437", element="f.770EE3E6A449D5EA319B204FE57C23A1.d.5481EB577B1A62ECBD0AC8D2CE340AAD.e.124")&gt;</var>
+<status status="PASS" start="2026-11-24T23:07:03.430780" elapsed="0.009037"/>
+</iter>
+<var>${producto}</var>
+<value>@{productos}</value>
+<status status="PASS" start="2026-11-24T23:07:03.407510" elapsed="0.032368"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-24T23:07:03.440457" level="INFO">Total de productos encontrados: 3</msg>
+<arg>Total de productos encontrados: ${cantidad}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.440182" elapsed="0.000328"/>
+</kw>
+<arg>${TERMINO_BUSQUEDA}</arg>
+<doc>Valida que haya resultados y que todos los nombres contengan el término buscado.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.390078" elapsed="0.050518"/>
+</kw>
+<kw name="Tomar Captura De Evidencia" owner="comunes">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:04.590105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej03_busqueda_productos.png"&gt;&lt;img src="../screenshots/ej03_busqueda_productos.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.441800" elapsed="1.148485"/>
+</kw>
+<arg>ej03_busqueda_productos</arg>
+<doc>Guarda una captura de pantalla en la carpeta screenshots/.</doc>
+<status status="PASS" start="2026-11-24T23:07:03.441230" elapsed="1.149205"/>
+</kw>
+<kw name="Cerrar Navegador" owner="comunes" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>FALLO_{index}.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-11-24T23:07:04.591638" elapsed="0.000469"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-24T23:07:04.592312" elapsed="2.241725"/>
+</kw>
+<doc>Si la prueba falló guarda una captura del error y luego cierra el navegador.</doc>
+<status status="PASS" start="2026-11-24T23:07:04.591107" elapsed="2.243226"/>
+</kw>
+<tag>busqueda</tag>
+<tag>ejercicio3</tag>
+<tag>funcional</tag>
+<status status="PASS" start="2026-11-24T23:06:55.808309" elapsed="11.026501"/>
+</test>
+<doc>Ejercicio 3 - Búsqueda de Productos
+Tipo de prueba: funcional - búsqueda y filtrado de información.
+Se ingresa a la sección de productos, se realiza una búsqueda y se valida
+que los resultados correspondan al término buscado.</doc>
+<status status="PASS" start="2026-11-24T23:06:55.788348" elapsed="11.047254"/>
+</suite>
+<suite id="s1-s3" name="Ej06 Suscripcion" source="C:\Users\LENOVO\Documents\practicas-automatizacion\robot_project\tests\ej06_suscripcion.robot">
+<test id="s1-s3-t1" name="Suscripcion Con Correo Valido Muestra Mensaje De Exito" line="12">
+<kw name="Abrir Navegador En El Sitio" owner="comunes" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:06.857252" level="INFO">Opening browser 'edge' to base url 'https://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${OPCIONES_NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:07:06.856953" elapsed="3.333495"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>${ANCHO_VENTANA}</arg>
+<arg>${ALTO_VENTANA}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.190728" elapsed="0.372881"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.563938" elapsed="0.001545"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.565696" elapsed="0.000304"/>
+</kw>
+<doc>Abre el navegador configurado, define tiempos de espera y carpeta de capturas.</doc>
+<status status="PASS" start="2026-11-24T23:07:06.856458" elapsed="3.709661"/>
+</kw>
+<kw name="Abrir Pagina De Inicio" owner="suscripcion_keywords">
+<kw name="Ir A La Pagina" owner="comunes">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Cargar Pagina" owner="comunes">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:10.568573" level="INFO">Opening url 'https://automationexercise.com/'</msg>
+<arg>${URL}${ruta}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.568429" elapsed="1.758909"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${elemento_esperado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.327696" elapsed="0.021726"/>
+</kw>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<status status="PASS" start="2026-11-24T23:07:10.568109" elapsed="1.781482"/>
+</kw>
+<arg>3x</arg>
+<arg>5s</arg>
+<arg>Cargar Pagina</arg>
+<arg>${ruta}</arg>
+<arg>${elemento_esperado}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.567558" elapsed="1.782116"/>
+</kw>
+<arg>/</arg>
+<arg>${CAMPO_EMAIL_SUSCRIPCION}</arg>
+<doc>Navega a una ruta del sitio y espera un elemento. Reintenta si el sitio está saturado.</doc>
+<status status="PASS" start="2026-11-24T23:07:10.567120" elapsed="1.782658"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:07:10.566605" elapsed="1.783249"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:12.356082" level="INFO">Page title is 'Automation Exercise'.</msg>
+<arg>${TITULO_INICIO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.350241" elapsed="0.005944"/>
+</kw>
+<kw name="Ir A La Seccion De Suscripcion" owner="suscripcion_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${TITULO_SUSCRIPCION}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.357245" elapsed="0.290399"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:12.662827" level="INFO">Element 'xpath://div[@class='single-widget']/h2' is displayed.</msg>
+<arg>${TITULO_SUSCRIPCION}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.647937" elapsed="0.015020"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:12.669678" level="INFO">Current page contains element 'id:susbscribe_email'.</msg>
+<arg>${CAMPO_EMAIL_SUSCRIPCION}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.663214" elapsed="0.006566"/>
+</kw>
+<status status="PASS" start="2026-11-24T23:07:12.356733" elapsed="0.313162"/>
+</kw>
+<kw name="Suscribirse Con El Correo" owner="suscripcion_keywords">
+<kw name="Escribir En Campo" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.671122" elapsed="0.012248"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:12.684055" level="INFO">Typing text 'marcos.prueba@test.com' into text field 'id:susbscribe_email'.</msg>
+<arg>${localizador}</arg>
+<arg>${texto}</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.683658" elapsed="0.107512"/>
+</kw>
+<arg>${CAMPO_EMAIL_SUSCRIPCION}</arg>
+<arg>${email}</arg>
+<doc>Espera a que el campo sea visible, lo limpia y escribe el texto.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.670787" elapsed="0.120566"/>
+</kw>
+<kw name="Hacer Clic" owner="comunes">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.792195" elapsed="0.016022"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.808478" elapsed="0.296393"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${localizador}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.105168" elapsed="0.018340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:13.124189" level="INFO">Clicking element 'id:subscribe'.</msg>
+<arg>${localizador}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.123799" elapsed="0.058242"/>
+</kw>
+<arg>${BOTON_SUSCRIBIR}</arg>
+<doc>Desplaza el elemento a la vista, espera que esté habilitado y hace clic.</doc>
+<status status="PASS" start="2026-11-24T23:07:12.791730" elapsed="0.390504"/>
+</kw>
+<arg>${EMAIL_SUSCRIPCION}</arg>
+<status status="PASS" start="2026-11-24T23:07:12.670370" elapsed="0.511963"/>
+</kw>
+<kw name="Validar Mensaje De Suscripcion Exitosa" owner="suscripcion_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAJE_SUSCRIPCION}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.183721" elapsed="0.040116"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:13.224599" level="INFO">Verifying element 'css:#success-subscribe .alert-success' contains exact text 'You have been successfully subscribed!'.</msg>
+<arg>${MENSAJE_SUSCRIPCION}</arg>
+<arg>${mensaje_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.224133" elapsed="0.017578"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:13.254200" level="INFO">Current page contains text 'You have been successfully subscribed!'.</msg>
+<arg>${mensaje_esperado}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.242006" elapsed="0.012315"/>
+</kw>
+<arg>${MSG_SUSCRIPCION_EXITOSA}</arg>
+<status status="PASS" start="2026-11-24T23:07:13.182869" elapsed="0.071594"/>
+</kw>
+<kw name="Tomar Captura De Evidencia" owner="comunes">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-24T23:07:13.486221" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ej06_suscripcion.png"&gt;&lt;img src="../screenshots/ej06_suscripcion.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${nombre}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.255381" elapsed="0.231059"/>
+</kw>
+<arg>ej06_suscripcion</arg>
+<doc>Guarda una captura de pantalla en la carpeta screenshots/.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.254939" elapsed="0.231708"/>
+</kw>
+<kw name="Cerrar Navegador" owner="comunes" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>FALLO_{index}.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.488791" elapsed="0.000489"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.489489" elapsed="2.314443"/>
+</kw>
+<doc>Si la prueba falló guarda una captura del error y luego cierra el navegador.</doc>
+<status status="PASS" start="2026-11-24T23:07:13.488209" elapsed="2.315911"/>
+</kw>
+<tag>ejercicio6</tag>
+<tag>formulario</tag>
+<tag>funcional</tag>
+<status status="PASS" start="2026-11-24T23:07:06.855806" elapsed="8.948643"/>
+</test>
+<doc>Ejercicio 6 - Suscripción
+Tipo de prueba: funcional - formulario de captura de datos.
+Se registra un correo en la sección de suscripción del pie de página
+y se valida el mensaje de éxito.</doc>
+<status status="PASS" start="2026-11-24T23:07:06.836692" elapsed="8.968635"/>
+</suite>
+<status status="PASS" start="2026-11-24T23:06:46.191055" elapsed="29.615401"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">autenticacion</stat>
+<stat pass="1" fail="0" skip="0">busqueda</stat>
+<stat pass="1" fail="0" skip="0">ejercicio2</stat>
+<stat pass="1" fail="0" skip="0">ejercicio3</stat>
+<stat pass="1" fail="0" skip="0">ejercicio6</stat>
+<stat pass="1" fail="0" skip="0">formulario</stat>
+<stat pass="3" fail="0" skip="0">funcional</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
+<stat name="Ej02 Login Incorrecto" id="s1-s1" pass="1" fail="0" skip="0">Tests.Ej02 Login Incorrecto</stat>
+<stat name="Ej03 Busqueda Productos" id="s1-s2" pass="1" fail="0" skip="0">Tests.Ej03 Busqueda Productos</stat>
+<stat name="Ej06 Suscripcion" id="s1-s3" pass="1" fail="0" skip="0">Tests.Ej06 Suscripcion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
